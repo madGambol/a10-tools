@@ -39,10 +39,56 @@
 #define CMD_OFF       1
 #define CMD_MODE      2
 
+static const char * pHelp = 
+"Modes\n\n"
+"Note: HDMI has no settable modes that I could find in the header. \n"
+"This utility will not prevent you from setting HDMI modes,\n"
+"but you do so at your own risk.\n\n"
+"VGA Modes:\n\n"
+" 0 = 1680x1050\n"
+" 1 = 1440x900\n"
+" 2 = 1360x768\n"
+" 3 = 1280x1024\n"
+" 4 = 1024x768\n"
+" 5 = 800x600\n"
+" 6 = 640x480\n"
+" 7 = 1440x900 RB (not yet supported, according to header comments)\n"
+" 8 = 1680x1050 RB (not yet supported, according to header comments)\n"
+" 9 = 1920x1080 RB\n"
+"10 = 1920x1080\n"
+"11 = 1280x720\n\n"
+"LCD Modes:\n\n"
+"0-15 (brightness control)\n\n"
+"TV Modes:\n\n"
+"(according to the header, anyhow. I'm pretty sure analog component out can't push 1080p)\n\n"
+" 0 = 480i\n"
+" 1 = 576i\n"
+" 2 = 480p\n"
+" 3 = 576p\n"
+" 4 = 720p x 50hz\n"
+" 5 = 720p x 60hz\n"
+" 6 = 1080i x 50hz\n"
+" 7 = 1080i x 60hz\n"
+" 8 = 1080p x 24hz\n"
+" 9 = 1080p x 50hz\n"
+"10 = 1080p x 60hz\n"
+"11 = PAL\n"
+"12 = PAL SVIDEO\n"
+"14 = NTSC\n"
+"15 = NTSC SVIDEO\n"
+"17 = PAL M\n"
+"18 = PAL M SVIDEO\n"
+"20 = PAL NC\n"
+"21 = PAL NC SVIDEO\n"
+"23 = 1080P x 24HZ x 3D\n"
+"24 = 720P x 50HZ x 3D\n"
+"25 = 720P x 60HZ x 3D\n"
+"\n\n";
 
 void help(int argc, char const *argv[])
 {
-  printf ("Usage %s: <hdmi|vga|tv|lcd> <on|off|mode> [mode_number]\n", argv[0]);
+  printf ("Usage %s: <hdmi|vga|tv|lcd> <on|off|mode> [mode_number]\n\n", argv[0]);
+  printf ("%s", pHelp );
 }
 
 int main(int argc, char const *argv[])
