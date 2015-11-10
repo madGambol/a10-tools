@@ -106,7 +106,7 @@ int main(int argc, char const *argv[])
   }
 
   if (!strncasecmp(argv[1], "lcd", 3))
-    device = DEV_TV;
+    device = DEV_LCD;
   else if (!strncasecmp(argv[1], "tv", 2))
     device = DEV_TV;
   else if (!strncasecmp(argv[1], "hdmi", 4))
